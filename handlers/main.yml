@@ -19,6 +19,7 @@
   register: result
   changed_when: "result.rc != 0"
   check_mode: no
+  become: yes
   when: nginx_installation_type in nginx_installation_types_using_service
 
 - name: restart nginx - after config check
